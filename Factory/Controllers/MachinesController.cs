@@ -34,5 +34,46 @@ namespace Factory.Controllers
     {
       return View();
     }
+
+    [HttpPost]
+    public ActionResult Create(MachinesController machine)
+    {
+      if(!ModelState.IsValid)
+      {
+        return View(machine);
+      }
+      else
+      {
+        _db.Machines.Add(machine);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+      }
+    }
+
+    public ActionResult AddEngineer(int id)
+    {
+      Machine thisMachine = _db.Machines.FirstOrDefault(machines => machines.MachineId == id);
+      ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "EngineerName");
+      return View(thisMachine);
+    }
+
+    [HttpPost]
+    public ActionResult AddEngineer(Machines machines, int engineerId)
+    {
+      EngineerMachine joinEntity = _db.EngineerMachines.FirstOrDefault(joinEntity => (joinEntity.EngineerId == engineerId && joinEntity.MachineId == machine.MachineId));
+      if (joinEntity == null && engineerId !=0)
+      {
+        _db.EngineerMachines.Add(new EngineerMachine () { EngineerId = engineerId, MachineId = machine.MachineId})
+      }
+      return RedirectToAction("Details", new {id = machines.MachineId});
+    }
+
+    public ActionResult Edit(int id)
+    {
+      Machine thisMachine = _db.Machines.FirstOrDefault(machines => machines.MachineId == id);
+      returns View(thisMachine);
+    }
+
+    
   }
 }
