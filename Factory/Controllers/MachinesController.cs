@@ -58,20 +58,23 @@ namespace Factory.Controllers
     }
 
     [HttpPost]
-    public ActionResult AddEngineer(Machines machines, int engineerId)
+    public ActionResult AddEngineer(Machine machine, int engineerId)
     {
-      EngineerMachine joinEntity = _db.EngineerMachines.FirstOrDefault(joinEntity => (joinEntity.EngineerId == engineerId && joinEntity.MachineId == machine.MachineId));
+      #nullable enable
+      EngineerMachine? joinEntity = _db.EngineerMachines.FirstOrDefault(join => (join.EngineerId == engineerId && join.MachineId == machine.MachineId));
+      #nullable disable
       if (joinEntity == null && engineerId !=0)
       {
-        _db.EngineerMachines.Add(new EngineerMachine () { EngineerId = engineerId, MachineId = machine.MachineId})
+        _db.EngineerMachines.Add(new EngineerMachine () { EngineerId = engineerId, MachineId = machine.MachineId });
+        _db.SaveChanges();
       }
-      return RedirectToAction("Details", new {id = machines.MachineId});
+      return RedirectToAction("Details", new { id = machine.MachineId });
     }
-
+  
     public ActionResult Edit(int id)
     {
       Machine thisMachine = _db.Machines.FirstOrDefault(machines => machines.MachineId == id);
-      returns View(thisMachine);
+      return View(thisMachine);
     }
 
     [HttpPost]
@@ -82,16 +85,16 @@ namespace Factory.Controllers
       return RedirectToAction("Index");
     }
 
-    public ActionResultDelete(int id)
+    public ActionResult Delete(int id)
     {
-      Machine thisMachine = _db.Machines.FirstOrDefault(machines => machines.MachineId = id);
+      Machine thisMachine = _db.Machines.FirstOrDefault(machines => machines.MachineId == id);
       return View(thisMachine);
     }
 
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
-      Machine thisMachine = _db.Machines.FirstOrDefault(machines => machines.MachineId = id);
+      Machine thisMachine = _db.Machines.FirstOrDefault(machines => machines.MachineId == id);
       _db.Machines.Remove(thisMachine);
       _db.SaveChanges();
       return RedirectToAction("Index");
@@ -105,5 +108,5 @@ namespace Factory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-  }
+  }   
 }

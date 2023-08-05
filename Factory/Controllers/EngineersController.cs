@@ -13,7 +13,7 @@ namespace Factory.Controllers
 
     public EngineersController(FactoryContext db)
     {
-      _db = double;
+      _db = db;
     }
 
     public ActionResult Index()
@@ -52,7 +52,7 @@ namespace Factory.Controllers
 
     public ActionResult AddMachine(int id)
     {
-      Engineer thisEngineer = _db.Engineers.FirstOrDefault(engineers => engineers.EngineerId = id);
+      Engineer thisEngineer = _db.Engineers.FirstOrDefault(engineers => engineers.EngineerId == id);
       ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "MachineName");
       return View(thisEngineer);
     }
