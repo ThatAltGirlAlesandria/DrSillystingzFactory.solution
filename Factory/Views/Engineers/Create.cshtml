@@ -1,0 +1,24 @@
+@{
+  Layout="_Layout";
+}
+
+@model Factory.Models.Engineer
+
+<h2>Add a Engineer</h2>
+
+<p>@Html.ValidationMessageFor(model => model.EngineerName, "")</p>
+<p>@Html.ValidationMessageFor(model => model.EngineerDetails, "")</p>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.EngineerName)
+  @Html.TextBoxFor(model => model.EngineerName)
+  @Html.LabelFor(model => model.EngineerDetails)
+  @Html.TextAreaFor(model => model.EngineerDetails)
+
+  <input type="submit" value="Add new engineer"/>
+}
+
+<p>@Html.ActionLink("Add a new Engineer", "Create")</p>
+<p>@Html.ActionLink("Add a new Machine", "Create", "Machines")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

@@ -6,7 +6,7 @@
 
 <h2>Edit Engineers:</h2>
 
-<p>Edit this engineer: @Html.DisplayFor(model => model.EngineerName)</p>
+<p>Edit this Engineer: @Html.DisplayFor(model => model.EngineerName)</p>
 
 @using (Html.BeginForm())
 {
@@ -17,4 +17,4 @@
 }
 
 <p>@Html.ActionLink("Engineer list", "Index")</p>
-<p>@Html.ActionLink("Add a machine to a Engineer", "AddMachine", new { id = Model.EngineerId })</p>
+<p>@Html.ActionLink("Add a Machine to a Engineer", "AddMachine", new {id = Model.EngineerId})</p>
