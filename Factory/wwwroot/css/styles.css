@@ -1,6 +1,6 @@
 body {
-  background-color: black;
-  color:aquamarine;
+  background-color: aquamarine;
+  color: coral;
 }
 
 h1 {
@@ -12,5 +12,10 @@ h2 {
 }
 
 ul {
-  text-align: right;
+  text-align: Left;
+}
+
+p {
+  padding: 5px;
+  
 }
