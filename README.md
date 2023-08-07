@@ -20,7 +20,7 @@
 
 ## Description
 
-This web application was created to help Dr.Sillystringz make sure that there has been an engineer assigned to every machine in the factory, and vice versa. This project is meant to show my capabilities of utilizing many to many relationships with C#.
+This web application was created to help Dr.Sillystringz make sure that there has been an engineer assigned to every machine in the factory, and vice versa. This project is meant to show my capabilities of utilizing many to many relationships with C# and migrations with git and SQL.
 
 ## Setup/Installation Requirements
 * _Chrome web browser for best compatibility_
@@ -32,9 +32,9 @@ This web application was created to help Dr.Sillystringz make sure that there ha
 * _Afterword, download MySQL Server & Workbench_
 [Download here](https://dev.mysql.com/downloads/mysql/)
 
-## Step by step breakdown for how to download and run this program on your computer
-* _Clone this repo by opening GitBash, and navigating to the location you wish to clone the repo too._
-* _Navigate to the root directory of the project in the command line and running the following command_
+## Step-by-step breakdown of how to download and run this program on your computer
+* _Clone this repo by opening GitBash, and navigating to the location you wish to clone the repo to._
+* _Navigate to the root directory of the project in the command line and run the following command_
 ```
 $ git clone https://github.com/ThatAltGirlAlesandria/HairSalon.Solution.git
 ```
@@ -54,20 +54,20 @@ obj
 bin
 appsettings.json
 ```
-* _Now, open your command line again and make a commit. By making this commit BEFORE pushing to GitHub you will make sure the files that should be private/ not uploaded won't show. This is important because you don't want to share your username and password with the everyone!_
+* _Now, open your command line again and make a commit. By making this commit BEFORE pushing to GitHub you will make sure the files that should be private/ not uploaded won't show. This is important because you don't want to share your username and password with everyone!_
 
-#### Now that you have downloaded the repo and open it in the text editor you need to open MySQL workbench.
+#### Now that you have downloaded the repo and opened it in the text editor you need to open MySQL workbench.
 * _Download [MySQL Workbench](https://www.mysql.com/downloads/) if you don't have it on your computer already_
 * _After setting up your MySQL if you haven't done it already, in the Navigator make sure you are in the Administration Window_
 * _Select Data Import/Restore from the menu_
-* _In the Import Options pop up window select, "Import from Self-Contained File"_
+* _In the Import Options pop-up window select, "Import from Self-Contained File"_
 * _Navigate to the SQL file located in the root directory of the project you cloned called alesandria_wild.sql_
 * _Under Default Schema to be Imported To, select the New Button_
 * _Choose a name you would like for the database or continue to use alesandria_wild.sql if you're more comfortable with that_
 * _Click OK_
-* _You should see come tabs in the MySQL Workbench; navigate to the tab called "Import Progress" and click Start Import which is located in the bottom right corner of the tab_
+* _You should see some tabs in the MySQL Workbench; navigate to the tab called "Import Progress" and click Start Import which is located in the bottom right corner of the tab_
 * _Once you have finished the steps above locate the Schemas tab in the Navigator_
-* _Right click in the Schemas window of the Navigator and select Refresh All_
+* _Right-click in the Schemas window of the Navigator and select Refresh All_
 * _The database you just created should now appear in the Schema window_
 
 #### Final steps, connecting your new database to the HairSalon program.
@@ -93,7 +93,7 @@ $ dotnet watch run
 
 ## Known Bugs
 
-*_Webpages are Loading, but not showing anything._
+* None know currently.
 
 ## License
 
