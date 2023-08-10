@@ -2,17 +2,17 @@
   Layout = "_Layout";
 }
 
-@model Factory.Models.Machine
+@model Factory.Models.Engineer
 
 <h2>Assign a Engineer to a Machine:</h2>
 
-<p>Please add a Engineer to this Machine: @Html.DisplayFor(model => model.MachineName)</p>
+<p>Please add a Engineer to this Machine: @Html.DisplayFor(model => model.EngineerName)</p>
 
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(model => model.MachineId)
-    @Html.Label("Select Engineer")
-    @Html.DropDownList("EngineerId")
+    @Html.HiddenFor(model => model.EngineerId)
+    @Html.Label("Select Machine")
+    @Html.DropDownList("MachineId")
     <input type="submit" value="save" />
 }
 
