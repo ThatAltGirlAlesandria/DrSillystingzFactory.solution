@@ -36,7 +36,7 @@ This web application was created to help Dr.Sillystringz make sure that there ha
 * _Clone this repo by opening GitBash, and navigating to the location you wish to clone the repo to._
 * _Navigate to the root directory of the project in the command line and run the following command_
 ```
-$ git clone https://github.com/ThatAltGirlAlesandria/HairSalon.Solution.git
+$ git clone [https://github.com/ThatAltGirlAlesandria/DrSillystingzFactory.solution/]
 ```
 * _After cloning the repo in the location of your choice, set up your working environment by running_
 ```
